@@ -16,6 +16,8 @@ cd $BUILD_DIR
 mkdir bin
 cd bin
 
+ls -a
+
 echo "-----> Download git submodule"
 git submodule update --init --recursive
 
