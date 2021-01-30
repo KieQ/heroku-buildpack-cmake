@@ -13,7 +13,6 @@ CXX=g++-9
 
 # make bin directory to hold the temporary files
 cd $BUILD_DIR
-ls -a
 
 # # download the submodule use git submodule. This is done by another buildpack.
 # echo "-----> Download git submodule"
