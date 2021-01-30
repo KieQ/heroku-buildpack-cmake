@@ -16,9 +16,6 @@ cd $BUILD_DIR
 mkdir bin
 cd bin
 
-echo "-----> Install common dependency"
-apt update && apt install -y libboost-dev
-
 echo "-----> Download git submodule"
 git submodule update --init --recursive
 
