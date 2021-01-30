@@ -15,8 +15,9 @@ CXX=g++-9
 cd $BUILD_DIR
 ls -a
 
-echo "-----> Download git submodule"
-git submodule update --init --recursive
+# # download the submodule use git submodule. This is done by another buildpack.
+# echo "-----> Download git submodule"
+# git submodule update --init --recursive
 
 echo "-----> Change to binary directory"
 mkdir bin
