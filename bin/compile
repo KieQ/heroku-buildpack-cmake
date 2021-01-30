@@ -4,15 +4,24 @@
 set -e
 set -o pipefail
 
+# environment
 BUILD_DIR=$1
 CACHE_DIR=$2
+CC=gcc-9
+CXX=g++-9
+
 
 # make bin directory to hold the temporary files
 cd $BUILD_DIR
 mkdir bin
 cd bin
 
-# cmake
+echo "-----> Install common dependency"
+apt install libboost-dev
+
+echo "-----> Download git submodule"
+git submodule update --init --recursive
+
 echo "-----> Compiling with CMake"
 cmake .. -DCMAKE_BUILD_TYPE=Release
 
