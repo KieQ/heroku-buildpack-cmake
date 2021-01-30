@@ -13,13 +13,14 @@ CXX=g++-9
 
 # make bin directory to hold the temporary files
 cd $BUILD_DIR
-mkdir bin
-cd bin
-
 ls -a
 
 echo "-----> Download git submodule"
 git submodule update --init --recursive
+
+echo "-----> Change to binary directory"
+mkdir bin
+cd bin
 
 echo "-----> Compiling with CMake"
 cmake .. -DCMAKE_BUILD_TYPE=Release
@@ -27,4 +28,5 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 echo "-----> Install with make"
 make
 make install
+cd ..
 rm -rf bin
