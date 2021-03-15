@@ -18,6 +18,9 @@ cd $BUILD_DIR
 # echo "-----> Download git submodule"
 # git submodule update --init --recursive
 
+echo "-----> Delete .git"
+rm -rf .git
+
 echo "-----> Change to binary directory"
 mkdir bin
 cd bin
