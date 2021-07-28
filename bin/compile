@@ -14,10 +14,6 @@ CXX=g++-9
 # make bin directory to hold the temporary files
 cd $BUILD_DIR
 
-# download the submodule use git submodule. This is done by another buildpack.
-echo "-----> Configure Conan"
-conan profile new default --detect
-conan profile update settings.compiler.libcxx=libstdc++11 default
 
 echo "-----> Delete .git"
 rm -rf .git
@@ -26,7 +22,11 @@ echo "-----> Change To Build Directory"
 mkdir build
 cd build
 
-echo "-----> Install Library With Conan"
+
+# configure conan and install library with conan
+echo "-----> Configure Conan"
+conan profile new default --detect
+conan profile update settings.compiler.libcxx=libstdc++11 default
 conan install .. --build=missing
 
 echo "-----> Compiling With CMake"
@@ -36,4 +36,4 @@ make
 echo "-----> Install with make"
 make install
 cd ..
-rm -rf build .heroku
+rm -rf build
