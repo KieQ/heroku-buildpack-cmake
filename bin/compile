@@ -28,7 +28,7 @@ mkdir build
 cd build
 
 echo "-----> Install Library With Conan"
-conan install ..
+conan install .. --build=missing
 
 echo "-----> Compiling With CMake"
 cmake .. -DCMAKE_BUILD_TYPE=Release
