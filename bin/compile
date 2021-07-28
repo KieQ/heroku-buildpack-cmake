@@ -20,6 +20,7 @@ which python
 which python3
 which pip
 which pip3
+pwd
 
 pip install conan
 conan profile new default --detect
