@@ -16,9 +16,7 @@ cd $BUILD_DIR
 
 # download the submodule use git submodule. This is done by another buildpack.
 echo "-----> Install Conan"
-python3 -m pip install pkg_resources
-pip3 install —-upgrade setuptools pip3
-pip3 install conan
+pip install conan
 conan profile new default --detect
 conan profile update settings.compiler.libcxx=libstdc++11 default
 
