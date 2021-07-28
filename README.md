@@ -1,7 +1,7 @@
 Heroku buildpack: CMake
 ===================
 
-This is the heroku buildpack for project using CMake.
+This is the heroku buildpack for project using CMake and Conan.
 
 **Notice**: 
 ```cmake

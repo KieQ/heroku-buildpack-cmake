@@ -14,22 +14,27 @@ CXX=g++-9
 # make bin directory to hold the temporary files
 cd $BUILD_DIR
 
-# # download the submodule use git submodule. This is done by another buildpack.
-# echo "-----> Download git submodule"
-# git submodule update --init --recursive
+# download the submodule use git submodule. This is done by another buildpack.
+echo "-----> Install Conan"
+pip3 install conan
+conan profile new default --detect
+conan profile update settings.compiler.libcxx=libstdc++11 default
 
 echo "-----> Delete .git"
 rm -rf .git
 
-echo "-----> Change to binary directory"
-mkdir bin
-cd bin
+echo "-----> Change To Build Directory"
+mkdir build
+cd build
 
-echo "-----> Compiling with CMake"
+echo "-----> Install Library With Conan"
+conan install ..
+
+echo "-----> Compiling With CMake"
 cmake .. -DCMAKE_BUILD_TYPE=Release
 
 echo "-----> Install with make"
 make
 make install
 cd ..
-rm -rf bin
+rm -rf build
