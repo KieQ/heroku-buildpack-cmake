@@ -32,9 +32,9 @@ conan install .. --build=missing
 
 echo "-----> Compiling With CMake"
 cmake .. -DCMAKE_BUILD_TYPE=Release
+make
 
 echo "-----> Install with make"
-make
 make install
 cd ..
 rm -rf build
