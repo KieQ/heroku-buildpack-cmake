@@ -16,11 +16,8 @@ cd $BUILD_DIR
 
 # download the submodule use git submodule. This is done by another buildpack.
 echo "-----> Install Conan"
-which pip
-pip list
-pip install pkg_resources
-
-pip install conan
+wget https://github.com/conan-io/conan/releases/latest/download/conan-ubuntu-64.deb
+dpkg conan-ubuntu-64.deb
 conan profile new default --detect
 conan profile update settings.compiler.libcxx=libstdc++11 default
 
