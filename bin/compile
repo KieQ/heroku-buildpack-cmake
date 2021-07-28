@@ -9,7 +9,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 CC=gcc-9
 CXX=g++-9
-PY=$BUILD_DIR/.apt/usr/bin/python3
+PY=$BUILD_DIR/.apt/usr/bin/python
 
 
 # make bin directory to hold the temporary files
