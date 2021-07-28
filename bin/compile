@@ -9,7 +9,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 CC=gcc-9
 CXX=g++-9
-PY=BUILD_DIR/.apt/usr/bin/python3
+PY=$BUILD_DIR/.apt/usr/bin/python3
 
 
 # make bin directory to hold the temporary files
@@ -19,7 +19,7 @@ cd $BUILD_DIR
 echo "-----> Install Conan"
 echo $PY
 
-PY -m pip install conan
+$PY -m pip install conan
 conan profile new default --detect
 conan profile update settings.compiler.libcxx=libstdc++11 default
 
