@@ -30,7 +30,7 @@ conan profile update settings.compiler.libcxx=libstdc++11 default
 conan install .. --build=missing
 
 echo "-----> Compiling With CMake"
-cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake .. -DCMAKE_BUILD_TYPE=Release -DSKIP_TEST=ON
 make
 
 echo "-----> Install with make"
