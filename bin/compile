@@ -36,4 +36,4 @@ make
 echo "-----> Install with make"
 make install
 cd ..
-rm -rf build .heroku
+rm -rf build
